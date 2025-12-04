@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TNA 2026</title>
+<link rel="icon" type="image/x-icon" href="img/favicon.ico">
+<!-- Favicon para diferentes dispositivos -->
+<link rel="apple-touch-icon" sizes="180x180" href="img/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon.ico">
+<link rel="manifest" href="site.webmanifest">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -378,7 +384,7 @@
             line-height: 1.7;
         }
         
-        /* Footer */
+        /* Footer - ACTUALIZADO a 3 columnas */
         footer {
             background-color: var(--primary);
             color: white;
@@ -394,7 +400,7 @@
         
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 40px;
             margin-bottom: 40px;
         }
@@ -483,7 +489,6 @@
         .footer-column:nth-child(1) { animation-delay: 0.1s; }
         .footer-column:nth-child(2) { animation-delay: 0.2s; }
         .footer-column:nth-child(3) { animation-delay: 0.3s; }
-        .footer-column:nth-child(4) { animation-delay: 0.4s; }
         
         /* Responsive styles */
         @media (max-width: 992px) {
@@ -641,14 +646,14 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Torneo Nacional de Abogados Catamarca 2026</h2>
-            <p>El evento más prestigioso del ámbito legal en el país. Demuestra tus habilidades, compite con los mejores y haz crecer tu red profesional.</p>
-            <a href="#inscripcion" class="hero-btn">Inscribite</a>
-        </div>
-    </section>
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h2>Torneo Nacional de Fútbol de la Abogacía</h2>
+        <p>Del 29 de abril al 03 de mayo de 2026.</p>
+        <a href="#inscripcion" class="hero-btn">Inscribite</a>
+    </div>
+</section>
 
     <!-- Flyers Section -->
     <section class="flyers-section">
@@ -659,8 +664,8 @@
                 <div class="flyer-card" id="flyer1">
                     <div class="flyer-img flyer-2"></div>
                     <div class="flyer-content">
-                        <h3>Modalidades de Competencia</h3>
-                        <p>El torneo incluye diversas modalidades: litigación oral, alegatos, análisis de casos complejos y redacción de documentos legales. Cada modalidad será evaluada por un jurado de expertos.</p>
+                        <h3>Modalidad de Competencia</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat nunc a lorem feugiat, sit amet cursus justo varius. Integer nec risus risus. Sed vel mauris id urna pulvinar dictum. Vivamus fringilla mi in orci tempus, sed posuere lorem cursus.</p>
                     </div>
                 </div>
                 
@@ -669,7 +674,7 @@
                     <div class="flyer-img flyer-2"></div>
                     <div class="flyer-content">
                         <h3>Premios y Reconocimientos</h3>
-                        <p>Los ganadores recibirán premios en efectivo, certificados de excelencia profesional, publicación en revistas jurídicas nacionales y oportunidades de networking con firmas líderes.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat nunc a lorem feugiat, sit amet cursus justo varius. Integer nec risus risus. Sed vel mauris id urna pulvinar dictum. Vivamus fringilla mi in orci tempus, sed posuere lorem cursus.</p>
                     </div>
                 </div>
                 
@@ -678,7 +683,7 @@
                     <div class="flyer-img flyer-3"></div>
                     <div class="flyer-content">
                         <h3>Calendario de Eventos</h3>
-                        <p>El torneo se desarrollará durante 5 días en la Ciudad de Buenos Aires. Incluye conferencias magistrales, rondas eliminatorias, semifinales y la gran final con transmisión en vivo.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat nunc a lorem feugiat, sit amet cursus justo varius. Integer nec risus risus. Sed vel mauris id urna pulvinar dictum. Vivamus fringilla mi in orci tempus, sed posuere lorem cursus.</p>
                     </div>
                 </div>
             </div>
@@ -689,11 +694,6 @@
     <footer id="footer">
         <div class="container">
             <div class="footer-content" id="footerContent">
-                <div class="footer-column" id="footerCol1">
-                    <h4>Torneo Nacional de Abogados</h4>
-                    <p>El evento jurídico más importante del país, reuniendo a los mejores profesionales del derecho para competir y compartir conocimiento.</p>
-                </div>
-                
                 <div class="footer-column" id="footerCol2">
                     <h4>Enlaces Rápidos</h4>
                     <a href="#inscripcion">Inscripción</a>
@@ -723,6 +723,7 @@
             
             <div class="copyright" id="copyright">
                 <p>&copy; 2025 - Torneo Nacional de Abogados 2026. Todos los derechos reservados.</p>
+                <p>Hecho con <i class="fas fa-heart"></i> por Esteban Guzzo.</p>
             </div>
         </div>
     </footer>
