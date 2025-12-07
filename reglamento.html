@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TNA 2026</title>
+    <title>Reglamento - TNA 2026</title>
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -199,95 +199,10 @@
             color: var(--secondary);
         }
         
-        /* Hero section */
-        .hero {
-            background: url('img/fondohero.webp');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s ease-out 0.8s forwards;
-        }
-        
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero h2 {
-            font-size: 3.2rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease-out 1.3s forwards;
-        }
-        
-        .hero p {
-            font-size: 1.4rem;
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease-out 1.5s forwards;
-        }
-        
-        .hero-btn {
-            display: inline-block;
-            background-color: var(--secondary);
-            color: var(--primary);
-            font-size: 2rem;
-            font-weight: 700;
-            padding: 25px 60px;
-            text-decoration: none;
-            border-top-left-radius: 12px;
-            border-top-right-radius: 12px;
-            border-bottom-right-radius: 0px;
-            border-bottom-left-radius: 12px;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            opacity: 0;
-            transform: scale(0.9);
-            animation: fadeInScale 0.8s ease-out 1.7s forwards;
-        }
-        
-        @keyframes fadeInScale {
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-        
-        .hero-btn:hover {
-            background-color: #e0b73a;
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-        }
-        
-        /* Inscripción section */
-        .inscripcion-section {
+        /* Reglamento Section */
+        .reglamento-section {
             padding: 60px 20px;
             background-color: white;
-        }
-        
-        /* Redes section - NUEVA */
-        .redes-section {
-            padding: 60px 20px;
-            background-color: #f8f9fa;
         }
         
         .section-title {
@@ -316,203 +231,15 @@
             transform: translateX(-50%);
         }
         
-        /* Cuadro de información sobre la app - MODIFICADO (más pequeño y diferente) */
-        .app-info-card {
-            background-color: rgba(179, 148, 90, 0.05);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            opacity: 0;
-            transform: translateY(30px);
-            position: relative;
-            z-index: 1;
-            border-top: 5px solid var(--secondary);
-            max-width: 700px;
-            margin: 0 auto 40px;
-            padding: 25px;
-        }
-        
-        .app-info-card.animated {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-        
-        .app-info-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            z-index: 10;
-            background-color: rgba(179, 148, 90, 0.08);
-        }
-        
-        .app-info-content {
-            text-align: center;
-        }
-        
-        .app-info-content p {
-            font-size: 1.4rem;
-            color: var(--primary);
-            margin-bottom: 25px;
-            font-weight: 700;
-            line-height: 1.4;
-        }
-        
-        /* Tarjeta de WhatsApp - NUEVA */
-        .whatsapp-card {
-            background-color: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            opacity: 0;
-            transform: translateY(30px);
-            position: relative;
-            z-index: 1;
-            border-top: 5px solid var(--secondary);
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .whatsapp-card.animated {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-        
-        .whatsapp-card:hover {
-            transform: translateY(-10px) scale(1.03);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            z-index: 10;
-        }
-        
-        .whatsapp-header {
-            background-color: var(--primary);
-            color: #b3945a;
-            padding: 25px 20px;
-        }
-        
-        .whatsapp-header h3 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-        
-        .whatsapp-header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            margin-bottom: 0;
-        }
-        
-        .whatsapp-content {
-            padding: 30px;
-        }
-        
-        .whatsapp-content p {
-            font-size: 1.2rem;
-            color: var(--primary);
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-        
-        .whatsapp-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--whatsapp);
-            color: white;
-            padding: 15px 35px;
-            border-radius: 30px;
-            font-weight: bold;
-            font-size: 1.3rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 10px;
-        }
-        
-        .whatsapp-btn:hover {
-            background-color: #1da851;
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
-            color: white;
-        }
-        
-        .whatsapp-btn i {
-            margin-right: 12px;
-            font-size: 1.6rem;
-        }
-        
-        /* Botones APP COPAFÁCIL - MODIFICADO para dos botones */
-        .app-buttons-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 10px;
-            flex-wrap: wrap;
-        }
-        
-        .app-button {
-            display: inline-flex;
-            align-items: center;
-            background-color: var(--primary);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 30px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            min-width: 200px;
-            justify-content: center;
-        }
-        
-        .app-button:hover {
-            background-color: var(--secondary);
-            color: var(--primary);
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-        
-        .app-button i {
-            margin-right: 10px;
-            font-size: 1.4rem;
-        }
-        
-        .android-btn {
-            background-color: #3DDC84; /* Color verde de Android */
-            color: #000;
-        }
-        
-        .android-btn:hover {
-            background-color: #2ecc71;
-            color: #000;
-        }
-        
-        .ios-btn {
-            background-color: #000; /* Color negro de iOS */
-            color: #fff;
-        }
-        
-        .ios-btn:hover {
-            background-color: #333;
-            color: #fff;
-        }
-        
-        /* Cuadros de pasos de inscripción */
-        .inscripcion-container {
+        /* Capítulo Styles */
+        .capitulos-container {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
         
-        .paso-card {
+        .capitulo-card {
             background-color: white;
             border-radius: 10px;
             overflow: hidden;
@@ -525,34 +252,35 @@
             border-top: 5px solid var(--secondary);
             display: flex;
             flex-direction: column;
+            height: 100%;
         }
         
-        .paso-card.animated {
+        .capitulo-card.animated {
             animation: fadeInUp 0.8s ease-out forwards;
         }
         
-        .paso-card:hover {
+        .capitulo-card:hover {
             transform: translateY(-15px) scale(1.05);
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
             z-index: 10;
         }
         
-        .paso-header {
+        .capitulo-header {
             background-color: var(--primary);
             color: white;
             padding: 20px;
             text-align: center;
         }
         
-        .paso-header h3 {
-            font-size: 1.8rem;
+        .capitulo-header h3 {
+            font-size: 1.5rem;
             margin-bottom: 0;
             color: var(--secondary);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
         
-        .paso-content {
+        .capitulo-content {
             padding: 25px;
             flex-grow: 1;
             display: flex;
@@ -560,11 +288,11 @@
             transition: all 0.4s ease;
         }
         
-        .paso-card:hover .paso-content {
+        .capitulo-card:hover .capitulo-content {
             background-color: #f9f9f9;
         }
         
-        .paso-content h4 {
+        .capitulo-content h4 {
             color: var(--primary);
             margin-bottom: 15px;
             font-size: 1.3rem;
@@ -573,17 +301,17 @@
             padding-bottom: 10px;
         }
         
-        .paso-card:hover .paso-content h4 {
+        .capitulo-card:hover .capitulo-content h4 {
             color: var(--secondary);
         }
         
-        .paso-content ul {
+        .reglamento-list {
             list-style-type: none;
             margin-bottom: 20px;
             flex-grow: 1;
         }
         
-        .paso-content li {
+        .reglamento-list li {
             color: var(--gray);
             line-height: 1.7;
             margin-bottom: 10px;
@@ -591,7 +319,7 @@
             position: relative;
         }
         
-        .paso-content li::before {
+        .reglamento-list li::before {
             content: "•";
             color: var(--secondary);
             font-size: 1.5rem;
@@ -600,29 +328,60 @@
             top: -5px;
         }
         
-        .paso-nota {
-            background-color: rgba(179, 148, 90, 0.1);
-            border-left: 4px solid var(--secondary);
-            padding: 15px;
-            margin-top: 15px;
-            border-radius: 0 8px 8px 0;
-            font-size: 0.9rem;
+        /* Download Button Section */
+        .download-section {
+            background-color: rgba(179, 148, 90, 0.05);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 40px;
+            border-left: 5px solid var(--secondary);
         }
         
-        .fecha-limite {
-            background-color: rgba(255, 0, 0, 0.05);
-            border-left: 4px solid #dc3545;
-            padding: 15px;
-            margin-top: 15px;
-            border-radius: 0 8px 8px 0;
-            font-size: 0.9rem;
+        .download-content h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
         }
         
-        .fecha-limite strong {
-            color: #dc3545;
+        .download-content p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
-        /* Footer MODIFICADO - ahora con 3 columnas */
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--secondary);
+            color: var(--primary);
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(179, 148, 90, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .download-btn:hover {
+            background-color: #e0b73a;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(179, 148, 90, 0.4);
+        }
+        
+        .download-btn i {
+            margin-right: 12px;
+            font-size: 1.6rem;
+        }
+        
+        /* Footer */
         footer {
             background-color: var(--primary);
             color: white;
@@ -718,22 +477,26 @@
             animation: fadeInUp 0.8s ease-out 0.4s forwards;
         }
         
-        /* Animation delays */
-        .app-info-card { animation-delay: 0.1s; }
-        .paso-card:nth-child(1) { animation-delay: 0.2s; }
-        .paso-card:nth-child(2) { animation-delay: 0.3s; }
-        .paso-card:nth-child(3) { animation-delay: 0.4s; }
-        .paso-card:nth-child(4) { animation-delay: 0.5s; }
-        .whatsapp-card { animation-delay: 0.2s; }
+        /* Animations */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
         
-        /* Animation delays for footer columns */
-        .footer-column:nth-child(1) { animation-delay: 0.1s; }
-        .footer-column:nth-child(2) { animation-delay: 0.2s; }
-        .footer-column:nth-child(3) { animation-delay: 0.3s; }
+        /* Animation delays */
+        .capitulo-card:nth-child(1) { animation-delay: 0.2s; }
+        .capitulo-card:nth-child(2) { animation-delay: 0.3s; }
+        .capitulo-card:nth-child(3) { animation-delay: 0.4s; }
+        .capitulo-card:nth-child(4) { animation-delay: 0.5s; }
+        .capitulo-card:nth-child(5) { animation-delay: 0.6s; }
+        .capitulo-card:nth-child(6) { animation-delay: 0.7s; }
+        .capitulo-card:nth-child(7) { animation-delay: 0.8s; }
         
         /* Responsive styles */
         @media (max-width: 992px) {
-            .inscripcion-container {
+            .capitulos-container {
                 grid-template-columns: repeat(2, 1fr);
             }
             
@@ -741,48 +504,12 @@
                 grid-template-columns: repeat(3, 1fr);
             }
             
-            .hero h2 {
-                font-size: 2.8rem;
-            }
-            
-            .hero-btn {
-                font-size: 1.8rem;
-                padding: 20px 50px;
-            }
-            
             .logo-img {
                 height: 70px;
             }
             
-            .app-buttons-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .app-button {
-                width: 100%;
-                max-width: 300px;
-            }
-            
-            .app-info-card {
-                max-width: 600px;
-                padding: 20px;
-            }
-            
-            .app-info-content p {
-                font-size: 1.2rem;
-            }
-            
-            .whatsapp-card {
-                max-width: 500px;
-            }
-            
-            .whatsapp-header h3 {
-                font-size: 1.8rem;
-            }
-            
-            .whatsapp-content p {
-                font-size: 1.1rem;
+            .download-section {
+                padding: 30px;
             }
         }
         
@@ -794,19 +521,6 @@
             .mobile-menu-btn {
                 display: block;
                 right: 20px;
-            }
-            
-            .hero h2 {
-                font-size: 2.3rem;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .hero-btn {
-                font-size: 1.6rem;
-                padding: 18px 40px;
             }
             
             .section-title {
@@ -822,55 +536,26 @@
             }
             
             /* Ajuste para hover en móviles */
-            .paso-card:hover {
+            .capitulo-card:hover {
                 transform: translateY(-10px) scale(1.03);
             }
             
-            .app-info-card:hover {
-                transform: translateY(-5px) scale(1.02);
-            }
-            
-            .whatsapp-card:hover {
-                transform: translateY(-5px) scale(1.02);
-            }
-            
-            .app-button:hover, .whatsapp-btn:hover {
-                transform: translateY(-2px) scale(1.03);
+            .download-btn:hover {
+                transform: translateY(-3px) scale(1.03);
             }
             
             .footer-content {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
-            .app-info-card {
-                max-width: 90%;
-            }
-            
-            .whatsapp-card {
-                max-width: 90%;
-            }
         }
         
         @media (max-width: 576px) {
-            .inscripcion-container {
+            .capitulos-container {
                 grid-template-columns: 1fr;
             }
             
             .footer-content {
                 grid-template-columns: 1fr;
-            }
-            
-            .hero {
-                padding: 70px 20px;
-            }
-            
-            .hero h2 {
-                font-size: 2rem;
-            }
-            
-            .hero-btn {
-                font-size: 1.5rem;
-                padding: 16px 35px;
             }
             
             .logo {
@@ -890,39 +575,19 @@
             }
             
             /* Ajuste para hover en móviles pequeños */
-            .paso-card:hover, .whatsapp-card:hover, .app-info-card:hover {
+            .capitulo-card:hover {
                 transform: translateY(-5px) scale(1.02);
             }
             
-            .app-button {
-                padding: 10px 20px;
-                font-size: 1rem;
-                min-width: auto;
-                width: 100%;
-                max-width: 280px;
-            }
-            
-            .app-info-card {
-                padding: 15px;
-            }
-            
-            .app-info-content p {
-                font-size: 1.1rem;
-            }
-            
-            .whatsapp-header {
-                padding: 20px 15px;
-            }
-            
-            .whatsapp-header h3 {
-                font-size: 1.6rem;
-            }
-            
-            .whatsapp-content {
+            .download-section {
                 padding: 20px;
             }
             
-            .whatsapp-btn {
+            .download-content h3 {
+                font-size: 1.5rem;
+            }
+            
+            .download-btn {
                 padding: 12px 25px;
                 font-size: 1.1rem;
             }
@@ -940,11 +605,6 @@
             .mobile-menu-btn {
                 right: 10px;
                 font-size: 1.5rem;
-            }
-            
-            .whatsapp-header h3 {
-                flex-direction: column;
-                gap: 10px;
             }
         }
     </style>
@@ -969,8 +629,8 @@
                 <ul>
                     <li><a href="index.html">Inscripción</a></li>
                     <li><a href="reglamento.html">Reglamento</a></li>
-                    <li><a href="#redes">Redes</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="index.html#redes">Redes</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li>
                 </ul>
             </nav>
         </div>
@@ -979,149 +639,156 @@
         <div class="mobile-menu" id="mobileMenu">
             <ul>
                 <li><a href="index.html">Inscripción</a></li>
-                <li><a href="reglamento.html">Reglamento</a></li>
-                <li><a href="#redes">Redes</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="index.html#inscripcion">Reglamento</a></li>
+                <li><a href="index.html#redes">Redes</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
             </ul>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Torneo Nacional de Fútbol de la Abogacía</h2>
-            <p>Del 29 de abril al 03 de mayo de 2026.</p>
-            <a href="https://copafacil.com/-lnobm" class="hero-btn">Inscribite</a>
-        </div>
-    </section>
-
-    <!-- Inscripción Section -->
-    <section class="inscripcion-section" id="inscripcion">
+    <!-- Reglamento Section -->
+    <section class="reglamento-section">
         <div class="container">
-            <h2 class="section-title" id="sectionTitle">Información del Torneo</h2>
+            <h2 class="section-title" id="sectionTitle">Reglamento del Torneo</h2>
             
-            <!-- Cuadro de información sobre la app - MODIFICADO -->
-            <div class="app-info-card" id="appInfoCard">
-                <div class="app-info-content">
-                    <p>Todas las inscripciones se realizan por la app CopaFácil</p>
-                    
-                    <!-- Contenedor de botones de descarga -->
-                    <div class="app-buttons-container">
-                        <!-- Botón para Android -->
-                        <a href="https://play.google.com/store/apps/details?id=com.copafacil&hl=es_AR" target="_blank" class="app-button android-btn">
-                            <i class="fab fa-android"></i> Android
-                        </a>
-                        
-                        <!-- Botón para iOS -->
-                        <a href="https://apps.apple.com/ar/app/copa-f%C3%A1cil/id1444543396" target="_blank" class="app-button ios-btn">
-                            <i class="fab fa-apple"></i> iOS
-                        </a>
+            <div class="capitulos-container" id="capitulosContainer">
+                <!-- Capítulo 1 -->
+                <div class="capitulo-card" id="capitulo1">
+                    <div class="capitulo-header">
+                        <h3>CAPÍTULO 1</h3>
+                    </div>
+                    <div class="capitulo-content">
+                        <h4>De los Participantes</h4>
+                        <ul class="reglamento-list">
+                            <li>Equipos integrados por profesionales del Derecho (Abogados, Procuradores, Escribanos Abogados)</li>
+                            <li>Acreditar calidad mediante certificación del Colegio/Foro</li>
+                            <li>Presentar credencial habilitante y DNI</li>
+                            <li>Mínimo 15 jugadores por equipo en lista de buena fe</li>
+                            <li>Colegios con más de un equipo deben distinguirlos con letras (A, B, C, etc.)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Capítulo 2 -->
+                <div class="capitulo-card" id="capitulo2">
+                    <div class="capitulo-header">
+                        <h3>CAPÍTULO 2</h3>
+                    </div>
+                    <div class="capitulo-content">
+                        <h4>De la Inscripción</h4>
+                        <ul class="reglamento-list">
+                            <li>Inscripción exclusiva por APP COPA FÁCIL</li>
+                            <li>Fecha límite: 19 de abril de 2026 (IMPRORROGABLE)</li>
+                            <li>Delegado debe registrar equipo y luego inscribir jugadores</li>
+                            <li>Cada jugador debe completar datos personales, subir DNI, título profesional y comprobante de pago</li>
+                            <li>Valor inscripción: USD 80 (Libres con descuento hasta 15/02/2026: USD 60)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Capítulo 3 -->
+                <div class="capitulo-card" id="capitulo3">
+                    <div class="capitulo-header">
+                        <h3>CAPÍTULO 3</h3>
+                    </div>
+                    <div class="capitulo-content">
+                        <h4>Asamblea de Delegados</h4>
+                        <ul class="reglamento-list">
+                            <li>Fecha: 29 de abril de 2026 - 19:00 hs</li>
+                            <li>Lugar: Casa de Campo del Colegio de Abogados de Catamarca</li>
+                            <li>Solo delegados y subdelegados debidamente acreditados</li>
+                            <li>Decisión por mayoría simple (1 voto por equipo)</li>
+                            <li>Se decide sede del campeonato 2027</li>
+                            <li>Sorteo de zonas: 28 de abril de 2026 - 19:00 hs (transmisión en vivo)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Capítulo 4 -->
+                <div class="capitulo-card" id="capitulo4">
+                    <div class="capitulo-header">
+                        <h3>CAPÍTULO 4</h3>
+                    </div>
+                    <div class="capitulo-content">
+                        <h4>Forma de Disputa</h4>
+                        <ul class="reglamento-list">
+                            <li>Dos etapas: Clasificatoria y Final</li>
+                            <li>Clasificatoria: todos contra todos en zonas</li>
+                            <li>Clasifican ganadores de zona y mejores segundos/terceros según cantidad de equipos</li>
+                            <li>Etapa final: partidos eliminatorios (se define por penales si hay empate)</li>
+                            <li>Duración partidos: 60 min (clasificatoria), 70 min (final)</li>
+                            <li>7 cambios permitidos por partido</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Capítulo 5 -->
+                <div class="capitulo-card" id="capitulo5">
+                    <div class="capitulo-header">
+                        <h3>CAPÍTULO 5</h3>
+                    </div>
+                    <div class="capitulo-content">
+                        <h4>Categorías</h4>
+                        <ul class="reglamento-list">
+                            <li>Libres: sin límite de edad</li>
+                            <li>+35: mayores de 35 años (con 3 jugadores de 32-34 años permitidos)</li>
+                            <li>+45: mayores de 45 años (con 3 jugadores de 42-44 años permitidos)</li>
+                            <li>+52: mayores de 52 años (con 3 jugadores de 49-51 años permitidos)</li>
+                            <li>+58: mayores de 58 años (con 3 jugadores de 55-57 años permitidos)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Capítulo 6 -->
+                <div class="capitulo-card" id="capitulo6">
+                    <div class="capitulo-header">
+                        <h3>CAPÍTULO 6</h3>
+                    </div>
+                    <div class="capitulo-content">
+                        <h4>Tribunal de Disciplina</h4>
+                        <ul class="reglamento-list">
+                            <li>Mínimo 5 miembros: 1 propuesto por Comité, 2 por equipos masculinos, 2 por equipos femeninos</li>
+                            <li>Aplica "Código de Faltas TNA Catamarca 2026"</li>
+                            <li>Resoluciones por mayoría simple e inapelables</li>
+                            <li>Se reúne dentro de 1 hora finalizada cada jornada</li>
+                            <li>Considera informes de árbitros y veedores</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Capítulo 7 -->
+                <div class="capitulo-card" id="capitulo7">
+                    <div class="capitulo-header">
+                        <h3>CAPÍTULO 7</h3>
+                    </div>
+                    <div class="capitulo-content">
+                        <h4>Disposiciones Generales</h4>
+                        <ul class="reglamento-list">
+                            <li>Presentación con indumentaria completa y numerada</li>
+                            <li>Tolerancia: 15 min solo para primer partido del día</li>
+                            <li>Equipo sin 7 jugadores a tiempo pierde 3-0 y es descalificado</li>
+                            <li>Veedores controlan identidad mediante APP</li>
+                            <li>No se modifican listas de buena fe después del inicio</li>
+                            <li>Información oficial por web, APP, WhatsApp, Instagram y mail</li>
+                        </ul>
                     </div>
                 </div>
             </div>
             
-            <div class="inscripcion-container" id="inscripcionContainer">
-                <!-- Paso 1 -->
-                <div class="paso-card" id="paso1">
-                    <div class="paso-header">
-                        <h3>DELEGADOS</h3>
-                    </div>
-                    <div class="paso-content">
-                        <h4>Pasos a seguir</h4>
-                        <ul>
-                            <li>Descargar la app CopaFácil</li>
-                            <li>Registrarse como delegado</li>
-                            <li>Esperar aprobación del equipo organizador</li>
-                            <li>Cargar a todos los jugadores del equipo</li>
-                            <li>O enviarles el link de inscripción individual</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Paso 2 -->
-                <div class="paso-card" id="paso2">
-                    <div class="paso-header">
-                        <h3>JUGADORES</h3>
-                    </div>
-                    <div class="paso-content">
-                        <h4>Documentación requerida</h4>
-                        <ul>
-                            <li>Subir datos personales completos</li>
-                            <li>Cargar DNI (ambas caras)</li>
-                            <li>Subir título profesional habilitante</li>
-                            <li>Comprobante de inscripción</li>
-                            <li>Recibirán un mail cuando estén habilitados</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Paso 3 -->
-                <div class="paso-card" id="paso3">
-                    <div class="paso-header">
-                        <h3>PLAZOS</h3>
-                    </div>
-                    <div class="paso-content">
-                        <h4>Fechas importantes</h4>
-                        <ul>
-                            <li>El Comité revisará todas las inscripciones</li>
-                            <li>Se enviarán observaciones por mail en caso de ser necesario</li>
-                            <li>Revisar regularmente el correo electrónico</li>
-                            <li>Realizar correcciones solicitadas oportunamente</li>
-                        </ul>
-                        <div class="fecha-limite">
-                            <strong>Fecha límite de correcciones:</strong><br>
-                            15 de abril de 2026
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Paso 4 -->
-                <div class="paso-card" id="paso4">
-                    <div class="paso-header">
-                        <h3>HABILITACIÓN</h3>
-                    </div>
-                    <div class="paso-content">
-                        <h4>Requisitos finales</h4>
-                        <ul>
-                            <li>Jugadores sin requisitos completos serán dados de baja automáticamente</li>
-                            <li>Cada equipo debe contar con mínimo 15 jugadores habilitados</li>
-                            <li>Verificar estado de habilitación en la app</li>
-                            <li>Contactar al comité en caso de problemas</li>
-                        </ul>
-                        <div class="paso-nota">
-                            <strong>Importante:</strong> La habilitación definitiva se confirma únicamente por mail oficial del Comité Organizador.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Redes Section - NUEVA -->
-    <section class="redes-section" id="redes">
-        <div class="container">
-            <h2 class="section-title" id="redesTitle">Síguenos en Redes</h2>
-            
-            <!-- Tarjeta de WhatsApp -->
-            <div class="whatsapp-card" id="whatsappCard">
-                <div class="whatsapp-header">
-                    <h3>
-                        <i class="fab fa-whatsapp"></i>
-                        Canal de WhatsApp Oficial
-                    </h3>
-                    <p>XXXVIII - TORNEO NACIONAL DE LA ABOGACÍA - T.NA CATAMARCA 2026</p>
-                </div>
-                <div class="whatsapp-content">
-                    <p>Mantente informado sobre todas las novedades, actualizaciones y anuncios importantes del torneo a través de nuestro canal oficial de WhatsApp.</p>
-                    <a href="https://whatsapp.com/channel/0029Vb6Hlp84dTnN5OP5eb46" target="_blank" class="whatsapp-btn">
-                        <i class="fab fa-whatsapp"></i> Unirse al Canal
+            <!-- Download Section -->
+            <div class="download-section" id="downloadSection">
+                <div class="download-content">
+                    <h3>¿Necesitas el reglamento completo?</h3>
+                    <p>Descarga el documento oficial con todos los detalles, artículos y disposiciones completas del Torneo Nacional de Abogados 2026.</p>
+                    <a href="assets/reglamentoTNA.pdf" class="download-btn" download>
+                        <i class="fas fa-download"></i> Descargar Reglamento Completo
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer MODIFICADO - ahora con 3 columnas -->
+    <!-- Footer -->
     <footer id="footer">
         <div class="container">
             <div class="footer-content" id="footerContent">
@@ -1130,8 +797,8 @@
                     <h4>Enlaces Rápidos</h4>
                     <a href="index.html">Inscripción</a>
                     <a href="reglamento.html">Reglamento</a>
-                    <a href="#redes">Redes Sociales</a>
-                    <a href="#contacto">Contacto</a>
+                    <a href="index.html#redes">Redes Sociales</a>
+                    <a href="index.html#contacto">Contacto</a>
                 </div>
                 
                 <!-- Columna 2: Contacto -->
@@ -1220,37 +887,21 @@
                 sectionTitle.classList.add('animated');
             }
             
-            // App info card animation
-            const appInfoCard = document.getElementById('appInfoCard');
-            const appInfoCardPosition = appInfoCard.getBoundingClientRect().top;
-            
-            if (appInfoCardPosition < screenPosition) {
-                appInfoCard.classList.add('animated');
-            }
-            
-            // Paso cards animation
-            const pasoCards = document.querySelectorAll('.paso-card');
-            pasoCards.forEach((card, index) => {
+            // Capítulo cards animation
+            const capituloCards = document.querySelectorAll('.capitulo-card');
+            capituloCards.forEach((card, index) => {
                 const cardPosition = card.getBoundingClientRect().top;
                 if (cardPosition < screenPosition) {
                     card.classList.add('animated');
                 }
             });
             
-            // Redes section title animation
-            const redesTitle = document.getElementById('redesTitle');
-            const redesTitlePosition = redesTitle.getBoundingClientRect().top;
+            // Download section animation
+            const downloadSection = document.getElementById('downloadSection');
+            const downloadSectionPosition = downloadSection.getBoundingClientRect().top;
             
-            if (redesTitlePosition < screenPosition) {
-                redesTitle.classList.add('animated');
-            }
-            
-            // WhatsApp card animation
-            const whatsappCard = document.getElementById('whatsappCard');
-            const whatsappCardPosition = whatsappCard.getBoundingClientRect().top;
-            
-            if (whatsappCardPosition < screenPosition) {
-                whatsappCard.classList.add('animated');
+            if (downloadSectionPosition < screenPosition) {
+                downloadSection.classList.add('animated');
             }
             
             // Footer animation
@@ -1284,15 +935,6 @@
             setTimeout(animateOnScroll, 100);
         });
         
-        // Add parallax effect to hero section on scroll
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            const rate = scrolled * 0.5;
-            
-            hero.style.transform = `translateY(${rate}px)`;
-        });
-        
         // Close mobile menu when clicking outside
         document.addEventListener('click', function(event) {
             const isMobileMenuBtn = mobileMenuBtn.contains(event.target);
@@ -1305,6 +947,15 @@
                 icon.classList.add('fa-bars');
             }
         });
+        
+        // Download button confirmation
+        const downloadBtn = document.querySelector('.download-btn');
+        if (downloadBtn) {
+            downloadBtn.addEventListener('click', function(e) {
+                // You can add additional download tracking or confirmation here
+                console.log('Descargando reglamento completo...');
+            });
+        }
     </script>
 </body>
 </html>
