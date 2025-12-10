@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reglamento - TNA 2026</title>
+    <title>Pagos - TNA 2026</title>
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -15,6 +15,9 @@
             --dark: #212529;
             --gray: #6c757d;
             --whatsapp: #25D366;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
         }
         
         * {
@@ -199,8 +202,8 @@
             color: var(--secondary);
         }
         
-        /* Reglamento Section */
-        .reglamento-section {
+        /* Pagos Section */
+        .pagos-section {
             padding: 60px 20px;
             background-color: white;
         }
@@ -231,15 +234,98 @@
             transform: translateX(-50%);
         }
         
-        /* Capítulo Styles */
-        .capitulos-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
+        /* Cuenta Oficial Card */
+        .cuenta-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            opacity: 0;
+            transform: translateY(30px);
+            position: relative;
+            z-index: 1;
+            border-top: 5px solid var(--secondary);
+            max-width: 800px;
+            margin: 0 auto 60px;
         }
         
-        .capitulo-card {
+        .cuenta-card.animated {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .cuenta-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            z-index: 10;
+        }
+        
+        .cuenta-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .cuenta-header h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .cuenta-content {
+            padding: 30px;
+        }
+        
+        .cuenta-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .info-item {
+            margin-bottom: 20px;
+        }
+        
+        .info-item h4 {
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .info-item p {
+            color: var(--dark);
+            font-size: 1.1rem;
+            padding: 12px 15px;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            border-left: 3px solid var(--secondary);
+            word-break: break-all;
+        }
+        
+        .info-item .highlight {
+            background-color: rgba(179, 148, 90, 0.1);
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        /* Modalidades de Pago */
+        .modalidades-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .modalidad-card {
             background-color: white;
             border-radius: 10px;
             overflow: hidden;
@@ -255,130 +341,85 @@
             height: 100%;
         }
         
-        .capitulo-card.animated {
+        .modalidad-card.animated {
             animation: fadeInUp 0.8s ease-out forwards;
         }
         
-        .capitulo-card:hover {
-            transform: translateY(-15px) scale(1.05);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        .modalidad-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
             z-index: 10;
         }
         
-        .capitulo-header {
+        .modalidad-header {
             background-color: var(--primary);
             color: white;
-            padding: 20px;
+            padding: 25px;
             text-align: center;
         }
         
-        .capitulo-header h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0;
+        .modalidad-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
             color: var(--secondary);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
         
-        .capitulo-content {
-            padding: 25px;
+        .modalidad-icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .modalidad-content {
+            padding: 30px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
-            transition: all 0.4s ease;
         }
         
-        .capitulo-card:hover .capitulo-content {
-            background-color: #f9f9f9;
-        }
-        
-        .capitulo-content h4 {
+        .modalidad-content h4 {
             color: var(--primary);
             margin-bottom: 15px;
-            font-size: 1.3rem;
-            transition: color 0.3s;
+            font-size: 1.4rem;
             border-bottom: 2px solid var(--secondary);
             padding-bottom: 10px;
         }
         
-        .capitulo-card:hover .capitulo-content h4 {
-            color: var(--secondary);
-        }
-        
-        .reglamento-list {
+        .modalidad-list {
             list-style-type: none;
             margin-bottom: 20px;
             flex-grow: 1;
         }
         
-        .reglamento-list li {
+        .modalidad-list li {
             color: var(--gray);
             line-height: 1.7;
-            margin-bottom: 10px;
-            padding-left: 25px;
+            margin-bottom: 12px;
+            padding-left: 30px;
             position: relative;
         }
         
-        .reglamento-list li::before {
-            content: "•";
-            color: var(--secondary);
-            font-size: 1.5rem;
+        .modalidad-list li::before {
+            content: "✓";
+            color: var(--success);
+            font-size: 1.2rem;
             position: absolute;
             left: 0;
-            top: -5px;
+            top: 0;
         }
         
-        /* Download Button Section */
-        .download-section {
-            background-color: rgba(179, 148, 90, 0.05);
-            border-radius: 12px;
-            padding: 40px;
-            text-align: center;
-            margin-top: 40px;
-            border-left: 5px solid var(--secondary);
+        .alerta {
+            background-color: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid var(--warning);
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 0 8px 8px 0;
         }
         
-        .download-content h3 {
-            color: var(--primary);
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-        
-        .download-content p {
-            color: var(--gray);
-            font-size: 1.1rem;
-            margin-bottom: 25px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .download-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--secondary);
-            color: var(--primary);
-            padding: 15px 35px;
-            border-radius: 30px;
-            font-weight: bold;
-            font-size: 1.3rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(179, 148, 90, 0.3);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .download-btn:hover {
-            background-color: #e0b73a;
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 10px 25px rgba(179, 148, 90, 0.4);
-        }
-        
-        .download-btn i {
-            margin-right: 12px;
-            font-size: 1.6rem;
+        .alerta strong {
+            color: var(--dark);
         }
         
         /* Footer */
@@ -486,20 +527,12 @@
         }
         
         /* Animation delays */
-        .capitulo-card:nth-child(1) { animation-delay: 0.2s; }
-        .capitulo-card:nth-child(2) { animation-delay: 0.3s; }
-        .capitulo-card:nth-child(3) { animation-delay: 0.4s; }
-        .capitulo-card:nth-child(4) { animation-delay: 0.5s; }
-        .capitulo-card:nth-child(5) { animation-delay: 0.6s; }
-        .capitulo-card:nth-child(6) { animation-delay: 0.7s; }
-        .capitulo-card:nth-child(7) { animation-delay: 0.8s; }
+        .cuenta-card { animation-delay: 0.2s; }
+        .modalidad-card:nth-child(1) { animation-delay: 0.3s; }
+        .modalidad-card:nth-child(2) { animation-delay: 0.4s; }
         
         /* Responsive styles */
         @media (max-width: 992px) {
-            .capitulos-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
             .footer-content {
                 grid-template-columns: repeat(3, 1fr);
             }
@@ -508,8 +541,8 @@
                 height: 70px;
             }
             
-            .download-section {
-                padding: 30px;
+            .cuenta-card {
+                max-width: 90%;
             }
         }
         
@@ -536,26 +569,33 @@
             }
             
             /* Ajuste para hover en móviles */
-            .capitulo-card:hover {
-                transform: translateY(-10px) scale(1.03);
+            .cuenta-card:hover {
+                transform: translateY(-5px);
             }
             
-            .download-btn:hover {
-                transform: translateY(-3px) scale(1.03);
+            .modalidad-card:hover {
+                transform: translateY(-5px);
             }
             
             .footer-content {
                 grid-template-columns: repeat(2, 1fr);
             }
+            
+            .modalidades-container {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
         }
         
         @media (max-width: 576px) {
-            .capitulos-container {
+            .footer-content {
                 grid-template-columns: 1fr;
             }
             
-            .footer-content {
-                grid-template-columns: 1fr;
+            .pagos-section {
+                padding: 40px 20px;
             }
             
             .logo {
@@ -575,21 +615,20 @@
             }
             
             /* Ajuste para hover en móviles pequeños */
-            .capitulo-card:hover {
-                transform: translateY(-5px) scale(1.02);
+            .cuenta-card:hover, .modalidad-card:hover {
+                transform: translateY(-5px);
             }
             
-            .download-section {
+            .cuenta-content {
                 padding: 20px;
             }
             
-            .download-content h3 {
-                font-size: 1.5rem;
+            .cuenta-info {
+                grid-template-columns: 1fr;
             }
             
-            .download-btn {
-                padding: 12px 25px;
-                font-size: 1.1rem;
+            .modalidad-content {
+                padding: 20px;
             }
         }
         
@@ -605,6 +644,11 @@
             .mobile-menu-btn {
                 right: 10px;
                 font-size: 1.5rem;
+            }
+            
+            .cuenta-header h3 {
+                flex-direction: column;
+                gap: 10px;
             }
         }
     </style>
@@ -639,150 +683,112 @@
         <div class="mobile-menu" id="mobileMenu">
             <ul>
                 <li><a href="index.html">Inscripción</a></li>
-                <li><a href="index.html#inscripcion">Reglamento</a></li>
+                <li><a href="reglamento.html">Reglamento</a></li>
                 <li><a href="index.html#redes">Redes</a></li>
                 <li><a href="pagos.html">Pagos</a></li>
             </ul>
         </div>
     </header>
 
-    <!-- Reglamento Section -->
-    <section class="reglamento-section">
+    <!-- Pagos Section -->
+    <section class="pagos-section">
         <div class="container">
-            <h2 class="section-title" id="sectionTitle">Reglamento del Torneo</h2>
+            <h2 class="section-title" id="sectionTitle">Información de Pagos</h2>
             
-            <div class="capitulos-container" id="capitulosContainer">
-                <!-- Capítulo 1 -->
-                <div class="capitulo-card" id="capitulo1">
-                    <div class="capitulo-header">
-                        <h3>CAPÍTULO 1</h3>
-                    </div>
-                    <div class="capitulo-content">
-                        <h4>De los Participantes</h4>
-                        <ul class="reglamento-list">
-                            <li>Equipos integrados por profesionales del Derecho (Abogados, Procuradores, Escribanos Abogados)</li>
-                            <li>Acreditar calidad mediante certificación del Colegio/Foro</li>
-                            <li>Presentar credencial habilitante y DNI</li>
-                            <li>Mínimo 15 jugadores por equipo en lista de buena fe</li>
-                            <li>Colegios con más de un equipo deben distinguirlos con letras (A, B, C, etc.)</li>
-                        </ul>
-                    </div>
+            <!-- Cuenta Oficial del Torneo -->
+            <div class="cuenta-card" id="cuentaCard">
+                <div class="cuenta-header">
+                    <h3>
+                        <i class="fas fa-university"></i>
+                        Cuenta Oficial del Torneo
+                    </h3>
                 </div>
-                
-                <!-- Capítulo 2 -->
-                <div class="capitulo-card" id="capitulo2">
-                    <div class="capitulo-header">
-                        <h3>CAPÍTULO 2</h3>
-                    </div>
-                    <div class="capitulo-content">
-                        <h4>De la Inscripción</h4>
-                        <ul class="reglamento-list">
-                            <li>Inscripción exclusiva por APP COPA FÁCIL</li>
-                            <li>Fecha límite: 19 de abril de 2026 (IMPRORROGABLE)</li>
-                            <li>Delegado debe registrar equipo y luego inscribir jugadores</li>
-                            <li>Cada jugador debe completar datos personales, subir DNI, título profesional y comprobante de pago</li>
-                            <li>Valor inscripción: USD 80 (Libres con descuento hasta 15/02/2026: USD 60)</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Capítulo 3 -->
-                <div class="capitulo-card" id="capitulo3">
-                    <div class="capitulo-header">
-                        <h3>CAPÍTULO 3</h3>
-                    </div>
-                    <div class="capitulo-content">
-                        <h4>Asamblea de Delegados</h4>
-                        <ul class="reglamento-list">
-                            <li>Fecha: 29 de abril de 2026 - 19:00 hs</li>
-                            <li>Lugar: Casa de Campo del Colegio de Abogados de Catamarca</li>
-                            <li>Solo delegados y subdelegados debidamente acreditados</li>
-                            <li>Decisión por mayoría simple (1 voto por equipo)</li>
-                            <li>Se decide sede del campeonato 2027</li>
-                            <li>Sorteo de zonas: 28 de abril de 2026 - 19:00 hs (transmisión en vivo)</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Capítulo 4 -->
-                <div class="capitulo-card" id="capitulo4">
-                    <div class="capitulo-header">
-                        <h3>CAPÍTULO 4</h3>
-                    </div>
-                    <div class="capitulo-content">
-                        <h4>Forma de Disputa</h4>
-                        <ul class="reglamento-list">
-                            <li>Dos etapas: Clasificatoria y Final</li>
-                            <li>Clasificatoria: todos contra todos en zonas</li>
-                            <li>Clasifican ganadores de zona y mejores segundos/terceros según cantidad de equipos</li>
-                            <li>Etapa final: partidos eliminatorios (se define por penales si hay empate)</li>
-                            <li>Duración partidos: 60 min (clasificatoria), 70 min (final)</li>
-                            <li>7 cambios permitidos por partido</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Capítulo 5 -->
-                <div class="capitulo-card" id="capitulo5">
-                    <div class="capitulo-header">
-                        <h3>CAPÍTULO 5</h3>
-                    </div>
-                    <div class="capitulo-content">
-                        <h4>Categorías</h4>
-                        <ul class="reglamento-list">
-                            <li>Libres: sin límite de edad</li>
-                            <li>+35: mayores de 35 años (con 3 jugadores de 32-34 años permitidos)</li>
-                            <li>+45: mayores de 45 años (con 3 jugadores de 42-44 años permitidos)</li>
-                            <li>+52: mayores de 52 años (con 3 jugadores de 49-51 años permitidos)</li>
-                            <li>+58: mayores de 58 años (con 3 jugadores de 55-57 años permitidos)</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Capítulo 6 -->
-                <div class="capitulo-card" id="capitulo6">
-                    <div class="capitulo-header">
-                        <h3>CAPÍTULO 6</h3>
-                    </div>
-                    <div class="capitulo-content">
-                        <h4>Tribunal de Disciplina</h4>
-                        <ul class="reglamento-list">
-                            <li>Mínimo 5 miembros: 1 propuesto por Comité, 2 por equipos masculinos, 2 por equipos femeninos</li>
-                            <li>Aplica "Código de Faltas TNA Catamarca 2026"</li>
-                            <li>Resoluciones por mayoría simple e inapelables</li>
-                            <li>Se reúne dentro de 1 hora finalizada cada jornada</li>
-                            <li>Considera informes de árbitros y veedores</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Capítulo 7 -->
-                <div class="capitulo-card" id="capitulo7">
-                    <div class="capitulo-header">
-                        <h3>CAPÍTULO 7</h3>
-                    </div>
-                    <div class="capitulo-content">
-                        <h4>Disposiciones Generales</h4>
-                        <ul class="reglamento-list">
-                            <li>Presentación con indumentaria completa y numerada</li>
-                            <li>Tolerancia: 15 min solo para primer partido del día</li>
-                            <li>Equipo sin 7 jugadores a tiempo pierde 3-0 y es descalificado</li>
-                            <li>Veedores controlan identidad mediante APP</li>
-                            <li>No se modifican listas de buena fe después del inicio</li>
-                            <li>Información oficial por web, APP, WhatsApp, Instagram y mail</li>
-                        </ul>
+                <div class="cuenta-content">
+                    <div class="cuenta-info">
+                        <div class="info-item">
+                            <h4>Banco</h4>
+                            <p class="highlight">Macro</p>
+                        </div>
+                        
+                        <div class="info-item">
+                            <h4>CBU</h4>
+                            <p>28501341300942155881</p>
+                        </div>
+                        
+                        <div class="info-item">
+                            <h4>Alias de CBU</h4>
+                            <p class="highlight">tnacat2026</p>
+                        </div>
+                        
+                        <div class="info-item">
+                            <h4>Razón Social</h4>
+                            <p>Colegio de Abogados de Catamarca</p>
+                        </div>
+                        
+                        <div class="info-item">
+                            <h4>ID. Tributaria</h4>
+                            <p>30668051959</p>
+                        </div>
+                        
+                        <div class="info-item">
+                            <h4>Tipo de Cuenta</h4>
+                            <p>Cuenta Corriente</p>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Download Section -->
-            <div class="download-section" id="downloadSection">
-                <div class="download-content">
-                    <h3>¿Necesitas el reglamento completo?</h3>
-                    <p>Descarga el documento oficial con todos los detalles, artículos y disposiciones completas del Torneo Nacional de Abogados 2026.</p>
-                    <a href="assets/reglamentoTNA.pdf" class="download-btn" download>
-                        <i class="fas fa-download"></i> Descargar Reglamento Completo
-                    </a>
+            <h2 class="section-title" id="modalidadesTitle">Modalidades de Pago</h2>
+            
+            <!-- Modalidades de Pago -->
+            <div class="modalidades-container" id="modalidadesContainer">
+                <!-- Pago Individual -->
+                <div class="modalidad-card" id="modalidadIndividual">
+                    <div class="modalidad-header">
+                        <div class="modalidad-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>Pago Individual</h3>
+                    </div>
+                    <div class="modalidad-content">
+                        <h4>Características</h4>
+                        <ul class="modalidad-list">
+                            <li>Cada jugador paga su parte al inscribirse</li>
+                            <li>Pago seguro a través de la APP CopaFácil</li>
+                            <li>Opción de pago con tarjetas de crédito</li>
+                            <li>Posibilidad de pagar en cuotas</li>
+                            <li>Comprobante inmediato de pago</li>
+                            <li>Habilitación automática al confirmarse el pago</li>
+                        </ul>
+                        <div class="alerta">
+                            <strong>Recomendado:</strong> Para equipos donde cada jugador gestiona su propia inscripción.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pago Colectivo -->
+                <div class="modalidad-card" id="modalidadColectivo">
+                    <div class="modalidad-header">
+                        <div class="modalidad-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Pago Colectivo</h3>
+                    </div>
+                    <div class="modalidad-content">
+                        <h4>Características</h4>
+                        <ul class="modalidad-list">
+                            <li>El delegado gestiona y abona el PAGO TOTAL del equipo</li>
+                            <li>Transferencia bancaria a la cuenta oficial</li>
+                            <li>Debe enviarse comprobante por email</li>
+                            <li>Todo el equipo queda habilitado simultáneamente</li>
+                            <li>Coordinación centralizada de pagos</li>
+                            <li>Mayor control del presupuesto del equipo</li>
+                        </ul>
+                        <div class="alerta">
+                            <strong>¡ATENCIÓN DELEGADOS!</strong><br>
+                            NO se aceptan pagos parciales bajo esta modalidad. Solo se acepta el pago TOTAL del plantel.
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -797,7 +803,7 @@
                     <h4>Enlaces Rápidos</h4>
                     <a href="index.html">Inscripción</a>
                     <a href="reglamento.html">Reglamento</a>
-                    <a href="index.html#redes">Redes Sociales</a>
+                    <a href="#redes">Redes Sociales</a>
                     <a href="pagos.html">Pagos</a>
                 </div>
                 
@@ -887,22 +893,30 @@
                 sectionTitle.classList.add('animated');
             }
             
-            // Capítulo cards animation
-            const capituloCards = document.querySelectorAll('.capitulo-card');
-            capituloCards.forEach((card, index) => {
+            // Modalidades title animation
+            const modalidadesTitle = document.getElementById('modalidadesTitle');
+            const modalidadesTitlePosition = modalidadesTitle.getBoundingClientRect().top;
+            
+            if (modalidadesTitlePosition < screenPosition) {
+                modalidadesTitle.classList.add('animated');
+            }
+            
+            // Cuenta card animation
+            const cuentaCard = document.getElementById('cuentaCard');
+            const cuentaCardPosition = cuentaCard.getBoundingClientRect().top;
+            
+            if (cuentaCardPosition < screenPosition) {
+                cuentaCard.classList.add('animated');
+            }
+            
+            // Modalidades cards animation
+            const modalidadCards = document.querySelectorAll('.modalidad-card');
+            modalidadCards.forEach((card, index) => {
                 const cardPosition = card.getBoundingClientRect().top;
                 if (cardPosition < screenPosition) {
                     card.classList.add('animated');
                 }
             });
-            
-            // Download section animation
-            const downloadSection = document.getElementById('downloadSection');
-            const downloadSectionPosition = downloadSection.getBoundingClientRect().top;
-            
-            if (downloadSectionPosition < screenPosition) {
-                downloadSection.classList.add('animated');
-            }
             
             // Footer animation
             const footer = document.getElementById('footer');
@@ -948,14 +962,49 @@
             }
         });
         
-        // Download button confirmation
-        const downloadBtn = document.querySelector('.download-btn');
-        if (downloadBtn) {
-            downloadBtn.addEventListener('click', function(e) {
-                // You can add additional download tracking or confirmation here
-                console.log('Descargando reglamento completo...');
-            });
-        }
+        // Copy to clipboard functionality for CBU and Alias
+        document.addEventListener('DOMContentLoaded', function() {
+            const cbuElement = document.querySelector('.info-item:nth-child(2) p');
+            const aliasElement = document.querySelector('.info-item:nth-child(3) p');
+            
+            if (cbuElement) {
+                cbuElement.style.cursor = 'pointer';
+                cbuElement.title = 'Click para copiar al portapapeles';
+                
+                cbuElement.addEventListener('click', function() {
+                    const cbuText = this.textContent;
+                    navigator.clipboard.writeText(cbuText).then(function() {
+                        const originalText = cbuElement.textContent;
+                        cbuElement.textContent = '¡CBU copiado!';
+                        cbuElement.style.backgroundColor = 'rgba(40, 167, 69, 0.1)';
+                        
+                        setTimeout(function() {
+                            cbuElement.textContent = originalText;
+                            cbuElement.style.backgroundColor = '#f8f9fa';
+                        }, 2000);
+                    });
+                });
+            }
+            
+            if (aliasElement) {
+                aliasElement.style.cursor = 'pointer';
+                aliasElement.title = 'Click para copiar al portapapeles';
+                
+                aliasElement.addEventListener('click', function() {
+                    const aliasText = this.textContent;
+                    navigator.clipboard.writeText(aliasText).then(function() {
+                        const originalText = aliasElement.textContent;
+                        aliasElement.textContent = '¡Alias copiado!';
+                        aliasElement.style.backgroundColor = 'rgba(40, 167, 69, 0.1)';
+                        
+                        setTimeout(function() {
+                            aliasElement.textContent = originalText;
+                            aliasElement.style.backgroundColor = 'rgba(179, 148, 90, 0.1)';
+                        }, 2000);
+                    });
+                });
+            }
+        });
     </script>
 </body>
 </html>
