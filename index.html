@@ -24,6 +24,7 @@
             --dark: #212529;
             --gray: #6c757d;
             --whatsapp: #25D366;
+            --instagram: #E4405F;
         }
         
         * {
@@ -293,7 +294,7 @@
             background-color: white;
         }
         
-        /* Redes section - NUEVA */
+        /* Redes section - MODIFICADO para incluir Instagram */
         .redes-section {
             padding: 60px 20px;
             background-color: #f8f9fa;
@@ -323,6 +324,106 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
+        }
+        
+        /* Contenedor de tarjetas de redes */
+        .redes-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .redes-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Tarjeta de Instagram - NUEVA */
+        .instagram-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            opacity: 0;
+            transform: translateY(30px);
+            position: relative;
+            z-index: 1;
+            border-top: 5px solid #b3945a;
+            text-align: center;
+        }
+        
+        .instagram-card.animated {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .instagram-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            z-index: 10;
+        }
+        
+        .instagram-header {
+            background-color: var(--primary);
+            color: #b3945a;
+            padding: 25px 20px;
+        }
+        
+        .instagram-header h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .instagram-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 0;
+        }
+        
+        .instagram-content {
+            padding: 30px;
+        }
+        
+        .instagram-content p {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .instagram-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(228, 64, 95, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+        
+        .instagram-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(228, 64, 95, 0.4);
+            color: white;
+        }
+        
+        .instagram-btn i {
+            margin-right: 12px;
+            font-size: 1.6rem;
         }
         
         /* Cuadro de información sobre la app - MODIFICADO (más pequeño y diferente) */
@@ -377,8 +478,6 @@
             position: relative;
             z-index: 1;
             border-top: 5px solid var(--secondary);
-            max-width: 600px;
-            margin: 0 auto;
             text-align: center;
         }
         
@@ -734,6 +833,7 @@
         .paso-card:nth-child(3) { animation-delay: 0.4s; }
         .paso-card:nth-child(4) { animation-delay: 0.5s; }
         .whatsapp-card { animation-delay: 0.2s; }
+        .instagram-card { animation-delay: 0.3s; }
         
         /* Animation delays for footer columns */
         .footer-column:nth-child(1) { animation-delay: 0.1s; }
@@ -782,15 +882,15 @@
                 font-size: 1.2rem;
             }
             
-            .whatsapp-card {
-                max-width: 500px;
+            .whatsapp-card, .instagram-card {
+                max-width: 100%;
             }
             
-            .whatsapp-header h3 {
+            .whatsapp-header h3, .instagram-header h3 {
                 font-size: 1.8rem;
             }
             
-            .whatsapp-content p {
+            .whatsapp-content p, .instagram-content p {
                 font-size: 1.1rem;
             }
         }
@@ -831,7 +931,7 @@
             }
             
             /* Ajuste para hover en móviles */
-            .paso-card:hover {
+            .paso-card:hover, .whatsapp-card:hover, .instagram-card:hover {
                 transform: translateY(-10px) scale(1.03);
             }
             
@@ -839,11 +939,7 @@
                 transform: translateY(-5px) scale(1.02);
             }
             
-            .whatsapp-card:hover {
-                transform: translateY(-5px) scale(1.02);
-            }
-            
-            .app-button:hover, .whatsapp-btn:hover {
+            .app-button:hover, .whatsapp-btn:hover, .instagram-btn:hover {
                 transform: translateY(-2px) scale(1.03);
             }
             
@@ -855,8 +951,9 @@
                 max-width: 90%;
             }
             
-            .whatsapp-card {
+            .redes-container {
                 max-width: 90%;
+                margin: 0 auto;
             }
         }
         
@@ -899,7 +996,7 @@
             }
             
             /* Ajuste para hover en móviles pequeños */
-            .paso-card:hover, .whatsapp-card:hover, .app-info-card:hover {
+            .paso-card:hover, .whatsapp-card:hover, .instagram-card:hover, .app-info-card:hover {
                 transform: translateY(-5px) scale(1.02);
             }
             
@@ -919,19 +1016,19 @@
                 font-size: 1.1rem;
             }
             
-            .whatsapp-header {
+            .whatsapp-header, .instagram-header {
                 padding: 20px 15px;
             }
             
-            .whatsapp-header h3 {
+            .whatsapp-header h3, .instagram-header h3 {
                 font-size: 1.6rem;
             }
             
-            .whatsapp-content {
+            .whatsapp-content, .instagram-content {
                 padding: 20px;
             }
             
-            .whatsapp-btn {
+            .whatsapp-btn, .instagram-btn {
                 padding: 12px 25px;
                 font-size: 1.1rem;
             }
@@ -951,7 +1048,7 @@
                 font-size: 1.5rem;
             }
             
-            .whatsapp-header h3 {
+            .whatsapp-header h3, .instagram-header h3 {
                 flex-direction: column;
                 gap: 10px;
             }
@@ -1106,25 +1203,46 @@
         </div>
     </section>
 
-    <!-- Redes Section - NUEVA -->
+    <!-- Redes Section - MODIFICADO con Instagram -->
     <section class="redes-section" id="redes">
         <div class="container">
             <h2 class="section-title" id="redesTitle">Síguenos en Redes</h2>
             
-            <!-- Tarjeta de WhatsApp -->
-            <div class="whatsapp-card" id="whatsappCard">
-                <div class="whatsapp-header">
-                    <h3>
-                        <i class="fab fa-whatsapp"></i>
-                        Canal de WhatsApp Oficial
-                    </h3>
-                    <p>XXXVIII - TORNEO NACIONAL DE LA ABOGACÍA - T.NA CATAMARCA 2026</p>
+            <!-- Contenedor para ambas tarjetas -->
+            <div class="redes-container" id="redesContainer">
+                <!-- Tarjeta de WhatsApp -->
+                <div class="whatsapp-card" id="whatsappCard">
+                    <div class="whatsapp-header">
+                        <h3>
+                            <i class="fab fa-whatsapp"></i>
+                            Canal de WhatsApp Oficial
+                        </h3>
+                        <p>XXXVIII - TORNEO NACIONAL DE LA ABOGACÍA - T.NA CATAMARCA 2026</p>
+                    </div>
+                    <div class="whatsapp-content">
+                        <p>Mantente informado sobre todas las novedades, actualizaciones y anuncios importantes del torneo a través de nuestro canal oficial de WhatsApp.</p>
+                        <a href="https://whatsapp.com/channel/0029Vb6Hlp84dTnN5OP5eb46" target="_blank" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Unirse al Canal
+                        </a>
+                    </div>
                 </div>
-                <div class="whatsapp-content">
-                    <p>Mantente informado sobre todas las novedades, actualizaciones y anuncios importantes del torneo a través de nuestro canal oficial de WhatsApp.</p>
-                    <a href="https://whatsapp.com/channel/0029Vb6Hlp84dTnN5OP5eb46" target="_blank" class="whatsapp-btn">
-                        <i class="fab fa-whatsapp"></i> Unirse al Canal
-                    </a>
+                
+                <!-- Tarjeta de Instagram - NUEVA -->
+                <div class="instagram-card" id="instagramCard">
+                    <div class="instagram-header">
+                        <h3>
+                            <i class="fab fa-instagram"></i>
+                            Instagram Oficial
+                        </h3>
+                        <p>@tna_catamarca2026</p>
+                        <p>Síguenos para fotos, videos y actualizaciones del torneo</p>
+                    </div>
+                    <div class="instagram-content">
+                        <p>No te pierdas las últimas novedades, fotos de los equipos, videos de los partidos y toda la cobertura del torneo en nuestro Instagram oficial.</p>
+                        <a href="https://www.instagram.com/tna_catamarca2026" target="_blank" class="instagram-btn">
+                            <i class="fab fa-instagram"></i> Seguir en Instagram
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1160,7 +1278,8 @@
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <!-- ACTUALIZADO: Enlace de Instagram con la URL correcta -->
+                        <a href="https://www.instagram.com/tna_catamarca2026" target="_blank"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -1254,12 +1373,24 @@
                 redesTitle.classList.add('animated');
             }
             
-            // WhatsApp card animation
-            const whatsappCard = document.getElementById('whatsappCard');
-            const whatsappCardPosition = whatsappCard.getBoundingClientRect().top;
-            
-            if (whatsappCardPosition < screenPosition) {
-                whatsappCard.classList.add('animated');
+            // Redes container animation
+            const redesContainer = document.getElementById('redesContainer');
+            if (redesContainer) {
+                const redesContainerPosition = redesContainer.getBoundingClientRect().top;
+                
+                if (redesContainerPosition < screenPosition) {
+                    // WhatsApp card animation
+                    const whatsappCard = document.getElementById('whatsappCard');
+                    if (whatsappCard && !whatsappCard.classList.contains('animated')) {
+                        whatsappCard.classList.add('animated');
+                    }
+                    
+                    // Instagram card animation
+                    const instagramCard = document.getElementById('instagramCard');
+                    if (instagramCard && !instagramCard.classList.contains('animated')) {
+                        instagramCard.classList.add('animated');
+                    }
+                }
             }
             
             // Footer animation
