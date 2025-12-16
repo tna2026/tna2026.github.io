@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TNA 2026 Catamarca</title>
-      <!-- Open Graph / Social preview -->
+    <!-- Open Graph / Social preview -->
     <meta property="og:title" content="TNA 2026 Catamarca – Torneo Nacional de la Abogacía">
     <meta property="og:description" content="Todo sobre el Torneo Nacional de Fútbol de la Abogacía en Catamarca – fechas, inscripciones y novedades.">
     <meta property="og:url" content="https://tna2026catamarca.com.ar/">
@@ -294,6 +294,12 @@
             background-color: white;
         }
         
+        /* Reglamento section */
+        .reglamento-section {
+            padding: 60px 20px;
+            background-color: white;
+        }
+        
         /* Redes section - MODIFICADO para incluir Instagram */
         .redes-section {
             padding: 60px 20px;
@@ -324,6 +330,95 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
+        }
+        
+        /* Tarjeta de Reglamento */
+        .reglamento-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            opacity: 0;
+            transform: translateY(30px);
+            position: relative;
+            z-index: 1;
+            border-top: 5px solid var(--secondary);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .reglamento-card.animated {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .reglamento-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            z-index: 10;
+        }
+        
+        .reglamento-header {
+            background-color: var(--primary);
+            color: #b3945a;
+            padding: 25px 20px;
+        }
+        
+        .reglamento-header h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .reglamento-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 0;
+        }
+        
+        .reglamento-content {
+            padding: 30px;
+        }
+        
+        .reglamento-content p {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .reglamento-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--secondary);
+            color: var(--primary);
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(179, 148, 90, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+        
+        .reglamento-btn:hover {
+            background-color: #e0b73a;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(179, 148, 90, 0.4);
+            color: var(--primary);
+        }
+        
+        .reglamento-btn i {
+            margin-right: 12px;
+            font-size: 1.6rem;
         }
         
         /* Contenedor de tarjetas de redes */
@@ -832,6 +927,7 @@
         .paso-card:nth-child(2) { animation-delay: 0.3s; }
         .paso-card:nth-child(3) { animation-delay: 0.4s; }
         .paso-card:nth-child(4) { animation-delay: 0.5s; }
+        .reglamento-card { animation-delay: 0.6s; }
         .whatsapp-card { animation-delay: 0.2s; }
         .instagram-card { animation-delay: 0.3s; }
         
@@ -882,15 +978,15 @@
                 font-size: 1.2rem;
             }
             
-            .whatsapp-card, .instagram-card {
+            .whatsapp-card, .instagram-card, .reglamento-card {
                 max-width: 100%;
             }
             
-            .whatsapp-header h3, .instagram-header h3 {
+            .whatsapp-header h3, .instagram-header h3, .reglamento-header h3 {
                 font-size: 1.8rem;
             }
             
-            .whatsapp-content p, .instagram-content p {
+            .whatsapp-content p, .instagram-content p, .reglamento-content p {
                 font-size: 1.1rem;
             }
         }
@@ -931,7 +1027,7 @@
             }
             
             /* Ajuste para hover en móviles */
-            .paso-card:hover, .whatsapp-card:hover, .instagram-card:hover {
+            .paso-card:hover, .whatsapp-card:hover, .instagram-card:hover, .reglamento-card:hover {
                 transform: translateY(-10px) scale(1.03);
             }
             
@@ -939,7 +1035,7 @@
                 transform: translateY(-5px) scale(1.02);
             }
             
-            .app-button:hover, .whatsapp-btn:hover, .instagram-btn:hover {
+            .app-button:hover, .whatsapp-btn:hover, .instagram-btn:hover, .reglamento-btn:hover {
                 transform: translateY(-2px) scale(1.03);
             }
             
@@ -996,7 +1092,7 @@
             }
             
             /* Ajuste para hover en móviles pequeños */
-            .paso-card:hover, .whatsapp-card:hover, .instagram-card:hover, .app-info-card:hover {
+            .paso-card:hover, .whatsapp-card:hover, .instagram-card:hover, .reglamento-card:hover, .app-info-card:hover {
                 transform: translateY(-5px) scale(1.02);
             }
             
@@ -1016,19 +1112,19 @@
                 font-size: 1.1rem;
             }
             
-            .whatsapp-header, .instagram-header {
+            .whatsapp-header, .instagram-header, .reglamento-header {
                 padding: 20px 15px;
             }
             
-            .whatsapp-header h3, .instagram-header h3 {
+            .whatsapp-header h3, .instagram-header h3, .reglamento-header h3 {
                 font-size: 1.6rem;
             }
             
-            .whatsapp-content, .instagram-content {
+            .whatsapp-content, .instagram-content, .reglamento-content {
                 padding: 20px;
             }
             
-            .whatsapp-btn, .instagram-btn {
+            .whatsapp-btn, .instagram-btn, .reglamento-btn {
                 padding: 12px 25px;
                 font-size: 1.1rem;
             }
@@ -1048,7 +1144,7 @@
                 font-size: 1.5rem;
             }
             
-            .whatsapp-header h3, .instagram-header h3 {
+            .whatsapp-header h3, .instagram-header h3, .reglamento-header h3 {
                 flex-direction: column;
                 gap: 10px;
             }
@@ -1104,7 +1200,7 @@
     <!-- Inscripción Section -->
     <section class="inscripcion-section" id="inscripcion">
         <div class="container">
-            <h2 class="section-title" id="sectionTitle">Información del Torneo</h2>
+            <h2 class="section-title" id="sectionTitle">Proceso de Inscripción</h2>
             
             <!-- Cuadro de información sobre la app - MODIFICADO -->
             <div class="app-info-card" id="appInfoCard">
@@ -1198,6 +1294,29 @@
                             <strong>Importante:</strong> La habilitación definitiva se confirma únicamente por mail oficial del Comité Organizador.
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Reglamento -->
+    <section class="reglamento-section" id="reglamento">
+        <div class="container">
+            <h2 class="section-title" id="reglamentoTitle">Revisa el Reglamento</h2>
+            
+            <div class="reglamento-card" id="reglamentoCard">
+                <div class="reglamento-header">
+                    <h3>
+                        <i class="fas fa-book"></i>
+                        Reglamento Oficial
+                    </h3>
+                    <p>Consulta todas las reglas y normativas del torneo</p>
+                </div>
+                <div class="reglamento-content">
+                    <p>Antes de inscribirte, te recomendamos revisar detalladamente el reglamento oficial del torneo para conocer todas las normas, requisitos y procedimientos establecidos por la organización.</p>
+                    <a href="reglamento.html" class="reglamento-btn">
+                        <i class="fas fa-external-link-alt"></i> Ver Reglamento Completo
+                    </a>
                 </div>
             </div>
         </div>
@@ -1364,6 +1483,24 @@
                     card.classList.add('animated');
                 }
             });
+            
+            // Reglamento title animation
+            const reglamentoTitle = document.getElementById('reglamentoTitle');
+            if (reglamentoTitle) {
+                const reglamentoTitlePosition = reglamentoTitle.getBoundingClientRect().top;
+                if (reglamentoTitlePosition < screenPosition) {
+                    reglamentoTitle.classList.add('animated');
+                }
+            }
+            
+            // Reglamento card animation
+            const reglamentoCard = document.getElementById('reglamentoCard');
+            if (reglamentoCard) {
+                const reglamentoCardPosition = reglamentoCard.getBoundingClientRect().top;
+                if (reglamentoCardPosition < screenPosition) {
+                    reglamentoCard.classList.add('animated');
+                }
+            }
             
             // Redes section title animation
             const redesTitle = document.getElementById('redesTitle');
